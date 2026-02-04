@@ -778,15 +778,6 @@ img {
     text-align: center;
 }
 
-.coming-soon {
-    font-size: 1.5rem;
-    color: var(--color-secondary);
-    font-weight: 700;
-    margin-top: var(--spacing-sm);
-    margin-bottom: var(--spacing-lg);
-    text-transform: uppercase;
-    letter-spacing: 2px;
-}
 
 .map-placeholder {
     background: rgba(255, 183, 0, 0.05);
@@ -1210,7 +1201,7 @@ img {
 
 .popup-address,
 .popup-phone {
-    color: rgba(255, 255, 255, 0.9);
+    color: rgba(0, 0, 0, 0.9);
     margin-bottom: 0.5rem;
     font-size: 0.95rem;
     line-height: 1.6;
