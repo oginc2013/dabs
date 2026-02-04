@@ -9,6 +9,9 @@ export default async function handler(req, res) {
     const response = await fetch(url);
     const data = await response.json();
 
+    console.log('RAW GOOGLE RESPONSE:', JSON.stringify(data));
+
+
     if (!data.values || data.values.length < 2) {
       return res.status(404).json({ error: 'No store data found' });
     }
