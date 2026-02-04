@@ -37,6 +37,7 @@ html {
     font-size: var(--font-size-base);
     overflow-x: hidden;
     max-width: 100%;
+    width: 100%;
 }
 
 body {
@@ -45,6 +46,9 @@ body {
     color: var(--color-white);
     line-height: 1.6;
     overflow-x: hidden;
+    width: 100%;
+    margin: 0;
+    padding: 0;
 }
 
 .container {
@@ -52,12 +56,12 @@ body {
     margin: 0 auto;
     padding: 0 var(--spacing-md);
     width: 100%;
-    overflow-x: hidden;
+    overflow: visible;
 }
 
 section {
     width: 100%;
-    overflow-x: hidden;
+    overflow: visible;
     position: relative;
 }
 
@@ -160,7 +164,7 @@ img {
     position: relative;
     background: linear-gradient(135deg, #000000 0%, #1a1a1a 50%, #000000 100%);
     padding-top: 80px;
-    padding-bottom: 150px;
+    padding-bottom: 0;
     overflow: visible;
 }
 
@@ -342,7 +346,7 @@ img {
 /* Drip Dividers - positioned at TOP of sections where color changes */
 .drip-divider {
     position: absolute;
-    top: -2px;
+    top: -1px;
     left: 0;
     width: 100%;
     overflow: visible;
@@ -355,18 +359,19 @@ img {
     position: relative;
     display: block;
     width: 100%;
-    height: 250px;
+    height: 200px;
+    min-height: 150px;
 }
 
 /* Dark to Yellow drip - at top of yellow section */
 .drip-dark-to-yellow {
-    top: -2px;
+    top: -1px;
 }
 
 /* Yellow to Dark drip - at top of products section */
 .drip-yellow-to-dark {
     position: absolute;
-    top: -2px;
+    top: -1px;
     left: 0;
     width: 100%;
     overflow: visible;
@@ -381,8 +386,8 @@ img {
 .product-highlight {
     background: var(--color-secondary);
     padding: var(--spacing-xl) 0;
-    padding-top: 200px;
-    padding-bottom: 150px;
+    padding-top: 150px;
+    padding-bottom: 100px;
     position: relative;
     overflow: visible;
 }
@@ -778,6 +783,15 @@ img {
     text-align: center;
 }
 
+.coming-soon {
+    font-size: 1.5rem;
+    color: var(--color-secondary);
+    font-weight: 700;
+    margin-top: var(--spacing-sm);
+    margin-bottom: var(--spacing-lg);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
 
 .map-placeholder {
     background: rgba(255, 183, 0, 0.05);
@@ -891,6 +905,22 @@ img {
 }
 
 @media (max-width: 768px) {
+    /* Honey Drip adjustments for mobile */
+    .drip-divider svg {
+        height: 100px;
+    }
+    
+    /* Section padding adjustments */
+    .hero {
+        padding-bottom: 0;
+        min-height: 90vh;
+    }
+    
+    .product-highlight {
+        padding-top: 100px;
+        padding-bottom: 80px;
+    }
+    
     .nav-links {
         display: none;
         position: fixed;
@@ -969,12 +999,26 @@ img {
 }
 
 @media (max-width: 480px) {
+    /* Honey Drip - even shorter on very small screens */
+    .drip-divider svg {
+        height: 80px;
+        min-height: 70px;
+        transform: scaleX(1.8);
+        transform-origin: center top;
+    }
+    
     .container {
         padding: 0 var(--spacing-sm);
     }
     
     .hero {
         padding-top: 100px;
+        padding-bottom: 0;
+    }
+    
+    .product-highlight {
+        padding-top: 80px;
+        padding-bottom: 60px;
     }
     
     .highlight-title {
@@ -1201,7 +1245,7 @@ img {
 
 .popup-address,
 .popup-phone {
-    color: rgba(0, 0, 0, 0.9);
+    color: rgba(255, 255, 255, 0.9);
     margin-bottom: 0.5rem;
     font-size: 0.95rem;
     line-height: 1.6;
@@ -1436,6 +1480,14 @@ img {
 
 /* Responsive Store Locator */
 @media (max-width: 768px) {
+    /* Honey Drip - Prevent from becoming too narrow/tall on mobile */
+    .drip-divider svg {
+        height: 120px;
+        min-height: 100px;
+        transform: scaleX(1.5);
+        transform-origin: center top;
+    }
+    
     .store-controls {
         flex-direction: column;
         align-items: stretch;
