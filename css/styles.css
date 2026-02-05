@@ -338,6 +338,7 @@ img {
 .carousel-wrapper {
     overflow: hidden;
     width: 100%;
+    touch-action: pan-y;
 }
 
 .carousel-track {
@@ -1400,6 +1401,37 @@ img {
         text-align: center;
     }
     
+    .carousel-container {
+        padding: 0 40px;
+    }
+
+    .carousel-track {
+        gap: 1rem;
+    }
+
+    .strain-card {
+        flex: 0 0 calc(100vw - 120px);
+        padding: 1.5rem;
+    }
+
+    .strain-card-image {
+        height: 200px;
+    }
+
+    .strain-name {
+        font-size: 1.2rem;
+    }
+
+    .carousel-nav {
+        width: 36px;
+        height: 36px;
+    }
+
+    .carousel-nav svg {
+        width: 18px;
+        height: 18px;
+    }
+
     .footer-nav ul {
         flex-wrap: wrap;
         justify-content: center;
