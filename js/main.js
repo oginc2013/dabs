@@ -417,8 +417,7 @@ const productData = {
             'Multiple strain selections'
         ],
         images: [
-            'assets/images/live_rosin2.png',
-            'assets/images/dabs_packaging.png'
+            'assets/images/live_rosin2.png'
         ]
     }
 };
