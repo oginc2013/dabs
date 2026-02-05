@@ -108,7 +108,7 @@ class StrainCarousel {
         const strainType = types[Math.floor(Math.random() * types.length)];
         
         // Create image filename from strain name
-        const imageFilename = strainName.toLowerCase().replace(/ /g, '_') + '.png';
+        const imageFilename = strainName.replace(/ /g, '_') + '.png';
         const imagePath = CAROUSEL_CONFIG.STRAINS_FOLDER + imageFilename;
         
         card.innerHTML = `
