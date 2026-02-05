@@ -18,6 +18,7 @@
                 <img src="assets/images/dabs_logo.png" alt="Dabs Logo" class="nav-logo">
                 <ul class="nav-links">
                     <li><a href="#home">Home</a></li>
+                    <li><a href="#strains">Strains</a></li>
                     <li><a href="#products">Products</a></li>
                     <li><a href="#stores">Find Stores</a></li>
                     <li><a href="#contact">Contact</a></li>
@@ -95,7 +96,7 @@
     </section>
 
     <!-- Strain Carousel Section -->
-    <section class="strain-carousel-section">
+    <section id="strains" class="strain-carousel-section">
         <div class="container">
             <h2 class="section-title">OUR STRAINS</h2>
             <p class="strain-subtitle">Swipe to explore our premium live rosin collection</p>
@@ -120,8 +121,6 @@
                 </button>
             </div>
             
-            <!-- Carousel Dots -->
-            <div class="carousel-dots" id="carouselDots"></div>
         </div>
     </section>
 
@@ -192,7 +191,7 @@
                     <select id="stateFilter" class="state-select">
                         <option value="">All States</option>
                         <option value="NM">New Mexico</option>
-                        <option value="CA">California</option>
+                        <option value="CA">Oregon</option>
                         <option value="MN">Minnesota</option>
                     </select>
                 </div>
@@ -233,15 +232,34 @@
                 <nav class="footer-nav">
                     <ul>
                         <li><a href="#home">Home</a></li>
+                        <li><a href="#strains">Strains</a></li>
                         <li><a href="#products">Products</a></li>
                         <li><a href="#stores">Find Stores</a></li>
                         <li><a href="#contact">Contact</a></li>
                     </ul>
                 </nav>
             </div>
-            <div class="footer-disclaimer">
-                <p>For use only by adults 21+. Keep out of reach of children.</p>
+            
+            <!-- Legal Disclaimers -->
+            <div class="footer-legal">
+                <div class="legal-primary">
+                    <h3>Please Consume Responsibly</h3>
+                </div>
+                
+                <div class="legal-warnings">
+                    <ul class="warning-list">
+                        <li>For use only by adults 21 and older. Keep out of reach of children.</li>
+                        <li>This product is not approved by the FDA to treat, cure, or prevent any disease. FDA has not evaluated this product for safety, effectiveness, and quality.</li>
+                        <li>Do not drive a motor vehicle or operate machinery while under the influence of cannabis.</li>
+                        <li>There may be long term adverse health effects from consumption of cannabis, including additional risks for women who are or may become pregnant or are breastfeeding.</li>
+                    </ul>
+                </div>
+                
+                <div class="legal-states">
+                    <p>Licensed for sale in New Mexico, Oregon, Minnesota, and California. All products comply with state and local regulations.</p>
+                </div>
             </div>
+            
             <div class="footer-bottom">
                 <p>&copy; 2026 Dabs. All rights reserved.</p>
             </div>
@@ -305,25 +323,13 @@
                         <label for="requestProduct">Product You Want *</label>
                         <select id="requestProduct" name="product" class="form-input" required>
                             <option value="">Select a product...</option>
-                            <option value="Live Rosin 1g">Live Rosin 1g</option>
-                            <option value="Live Rosin 2g">Live Rosin 2g</option>
+                            <option value="Live Rosin 1g">Live Rosin</option>
                             <option value="All-In-One Vape">All-In-One Vape</option>
                             <option value="Baller Jar 14g">Baller Jar 14g</option>
                             <option value="Any Dabs Product">Any Dabs Product</option>
                         </select>
                     </div>
                     
-                    <!-- Strain Preference (Optional) -->
-                    <div class="form-group">
-                        <label for="requestStrain">Preferred Strain (Optional)</label>
-                        <input 
-                            type="text" 
-                            id="requestStrain" 
-                            name="strain" 
-                            class="form-input" 
-                            placeholder="e.g., Blue Dream, Gelato"
-                        >
-                    </div>
                     
                     <!-- Contact Info -->
                     <div class="form-group">

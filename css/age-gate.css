@@ -526,28 +526,32 @@ body {
     .age-gate-logo {
         max-width: 180px;
     }
-    
+
     .age-gate-title {
         font-size: 1.6rem;
     }
-    
+
     .age-gate-question {
         font-size: 1.1rem;
     }
-    
+
     .age-btn {
         padding: 1rem 1.5rem;
         font-size: 1rem;
     }
-    
+
     .age-gate-content {
         padding: 2.5rem 1.5rem;
     }
-    
-    .email-section-title {
-        font-size: 1.2rem;
+
+    .email-inline-row {
+        flex-direction: column;
     }
-    
+
+    .email-step-title {
+        font-size: 1.4rem;
+    }
+
     .under-age-container {
         padding: 3rem 2rem;
     }

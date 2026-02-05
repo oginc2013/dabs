@@ -8,22 +8,8 @@
 // ===================================
 
 const REQUEST_CONFIG = {
-    // Google Sheets Configuration
-    USE_GOOGLE_SHEETS: false,  // Set to true once configured
-    SHEET_ID: 'YOUR_REQUEST_SHEET_ID',
-    API_KEY: 'YOUR_GOOGLE_API_KEY',
-    SHEET_NAME: 'ProductRequests',
-    
-    // Alternative: Webhook URL (recommended)
-    USE_WEBHOOK: false,
-    WEBHOOK_URL: 'YOUR_WEBHOOK_URL',
-    
-    // Email notification settings (handled by backend/Zapier)
-    SEND_STORE_EMAILS: true,
-    STORE_EMAIL_THRESHOLD: 5,  // Send email after X requests
-    
-    // Owner email for dashboard notifications (set in Vercel env vars)
-    OWNER_EMAIL: ''
+    // Vercel API endpoint — all secrets stay in env vars
+    API_ENDPOINT: '/api/request'
 };
 
 // ===================================
@@ -92,7 +78,6 @@ class RequestDabsModal {
             city: document.getElementById('requestCity').value.trim(),
             store: document.getElementById('requestStore').value.trim(),
             product: document.getElementById('requestProduct').value,
-            strain: document.getElementById('requestStrain').value.trim() || 'Any',
             email: document.getElementById('requestEmail').value.trim() || 'Not provided',
             instagram: document.getElementById('requestIG').value.trim() || 'Not provided',
             timestamp: new Date().toISOString(),
@@ -137,58 +122,25 @@ class RequestDabsModal {
     }
     
     async submitRequest(data) {
-        // Choose submission method based on configuration
-        
-        if (REQUEST_CONFIG.USE_WEBHOOK) {
-            // Method 1: Send to Webhook (RECOMMENDED)
-            return await this.sendToWebhook(data);
-            
-        } else if (REQUEST_CONFIG.USE_GOOGLE_SHEETS) {
-            // Method 2: Save to Google Sheets
-            return await this.saveToGoogleSheets(data);
-            
-        } else {
-            // Development mode - just log to console
-            console.log('Product request (dev mode):', data);
+        // Local dev fallback — no Vercel API available on file:// or localhost
+        const isLocal = location.hostname === '' || location.hostname === 'localhost' || location.hostname === '127.0.0.1';
+        if (isLocal) {
+            console.log('DEV MODE — request would be sent to /api/request:', data);
             return true;
         }
-    }
-    
-    async sendToWebhook(data) {
+
         try {
-            const response = await fetch(REQUEST_CONFIG.WEBHOOK_URL, {
+            const response = await fetch(REQUEST_CONFIG.API_ENDPOINT, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
                 },
                 body: JSON.stringify(data)
             });
-            
+
             return response.ok;
         } catch (error) {
-            console.error('Webhook error:', error);
-            return false;
-        }
-    }
-    
-    async saveToGoogleSheets(data) {
-        try {
-            // You'll need to create a Google Apps Script endpoint
-            // See documentation for setup instructions
-            
-            const scriptUrl = 'YOUR_GOOGLE_APPS_SCRIPT_URL';
-            
-            const response = await fetch(scriptUrl, {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                },
-                body: JSON.stringify(data)
-            });
-            
-            return response.ok;
-        } catch (error) {
-            console.error('Google Sheets error:', error);
+            console.error('Request submission error:', error);
             return false;
         }
     }

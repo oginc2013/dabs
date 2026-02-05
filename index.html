@@ -5,389 +5,197 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Dabs - Premium high-potency cannabis extracts. Fresh-frozen live rosin for the ultimate dabbing experience.">
     <title>Dabs - High-Potency Cannabis Extract</title>
-    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/age-gate.css">
+    <link rel="stylesheet" href="css/cookie-consent.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800;900&display=swap" rel="stylesheet">
 </head>
 <body>
-    <!-- Navigation -->
-    <nav class="navbar">
-        <div class="container">
-            <div class="nav-content">
-                <img src="assets/images/dabs_logo.png" alt="Dabs Logo" class="nav-logo">
-                <ul class="nav-links">
-                    <li><a href="#home">Home</a></li>
-                    <li><a href="#strains">Strains</a></li>
-                    <li><a href="#products">Products</a></li>
-                    <li><a href="#stores">Find Stores</a></li>
-                    <li><a href="#contact">Contact</a></li>
-                </ul>
-                <button class="mobile-menu-toggle" aria-label="Toggle menu">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                </button>
+    <!-- Age Gate -->
+    <div id="ageGate" class="age-gate-overlay">
+        <div class="age-gate-container">
+            <!-- Honey Drip Top -->
+            <div class="age-gate-drip-top">
+                <svg viewBox="0 0 1630 200" preserveAspectRatio="none">
+                    <defs>
+                        <linearGradient id="honeyDripTop" x1="0%" y1="0%" x2="0%" y2="100%">
+                            <stop offset="0%" style="stop-color:#FFB700;stop-opacity:1" />
+                            <stop offset="50%" style="stop-color:#FFAA00;stop-opacity:1" />
+                            <stop offset="100%" style="stop-color:#FF9D00;stop-opacity:0.95" />
+                        </linearGradient>
+                    </defs>
+                    <path fill="url(#honeyDripTop)" d="M876.867,80.549c-22.305-12.94-39.395,17.181-58.722,19.232-28.246,2.997-44.805-16.818-66.688-29.248-27.974-15.889-54.224-9.379-80.013,6.526-18.178,11.211-21.089,35.143-17.471,54.606,1.893,10.179,3.823,19.889,5.103,30.211,1.483,11.96-2.586,24.168-12.729,31.157s-25.001,4.934-32.905-4.417c-5.606-6.633-7.381-15.328-6.952-23.965,1.141-22.994,6.868-39.979,7.121-63.293.185-17.086-11.006-31.277-28.05-34.669-32.209-6.409-68.042,12.1-78.942,45.212-7.605,23.103-10.347,47.576-7.394,71.907L0,0h1630.436s-.006,99.986-.006,99.986c-14.182.533-26.836-4.566-38.166-12.296-8.433-5.823-16.252-11.724-25.048-16.822-28.056-16.26-55.595-9.883-81.464,6.767-17.631,11.348-20.166,35.338-16.543,54.547Z"/>
+                </svg>
             </div>
-        </div>
-    </nav>
 
-    <!-- Hero Section -->
-    <section id="home" class="hero">
-        <div class="hero-background">
-            <!-- Animated floating particles -->
-            <div class="particles"></div>
-        </div>
-        <div class="container">
-            <div class="hero-content">
-                <img src="assets/images/dabs_logo.png" alt="Dabs" class="hero-logo">
-                <h1 class="hero-title">
-                    <span class="title-line-1">HIGH-POTENCY</span>
-                    <span class="title-line-2">CANNABIS EXTRACT</span>
-                </h1>
-                <div class="hero-buttons">
-                    <button class="cta-button">Get Dabs</button>
-                    <button class="cta-button secondary" id="requestDabsBtn">Request Dabs Near You</button>
-                </div>
-            </div>
-        </div>
-    </section>
+            <!-- Content -->
+            <div class="age-gate-content">
+                <!-- Step 1: Age Verification -->
+                <div id="ageStep" class="age-gate-step active">
+                    <img src="assets/images/dabs_logo.png" alt="Dabs" class="age-gate-logo">
 
-    <!-- Product Highlight Section -->
-    <section class="product-highlight">
-        <!-- Dripping honey effect - grey/black honey drips DOWN from hero into yellow section -->
-        <div class="drip-divider drip-dark-to-yellow">
-            <svg viewBox="0 0 1630 335" preserveAspectRatio="none">
-                <defs>
-                    <!-- Gradient for dark drips - matching hero grey/black gradient EXACTLY -->
-                    <linearGradient id="darkDripGradient" x1="0%" y1="0%" x2="0%" y2="100%">
-                        <stop offset="0%" style="stop-color:#000000;stop-opacity:1" />
-                        <stop offset="30%" style="stop-color:#0d0d0d;stop-opacity:1" />
-                        <stop offset="60%" style="stop-color:#1a1a1a;stop-opacity:1" />
-                        <stop offset="100%" style="stop-color:#000000;stop-opacity:1" />
-                    </linearGradient>
-                </defs>
-                
-                <!-- Organic honey drip pattern -->
-                <path fill="url(#darkDripGradient)" d="M876.867,120.549c-22.305-12.94-39.395,17.181-58.722,19.232-28.246,2.997-44.805-16.818-66.688-29.248-27.974-15.889-54.224-9.379-80.013,6.526-18.178,11.211-21.089,35.143-17.471,54.606,1.893,10.179,3.823,19.889,5.103,30.211,1.483,11.96-2.586,24.168-12.729,31.157s-25.001,4.934-32.905-4.417c-5.606-6.633-7.381-15.328-6.952-23.965,1.141-22.994,6.868-39.979,7.121-63.293.185-17.086-11.006-31.277-28.05-34.669-32.209-6.409-68.042,12.1-78.942,45.212-7.605,23.103-10.347,47.576-7.394,71.907,3.282,27.046,15.595,48.457,10.763,75.064-1.657,9.126-5.117,17.508-11.733,23.956-10.523,10.255-25.223,13.489-39.425,10.432-28.747-6.187-30.126-39.75-26.796-63.379,4.163-29.538,11.963-56.321,13.115-85.258.632-15.884-3.554-30.26-12.484-43.04-8.558-12.247-21.256-19.084-36.294-20.162-14.62-1.049-28.697.292-41.862,6.963l-29.086,14.738c-20.458,10.367-41.416,21.458-64.252,10.565-24.449-11.663-46.093-34.135-70.13-25.793-16.727,5.805-38.603,19.815-44.49,36.853-10.659,30.849,6.111,49.158-1.064,79.608-2.908,12.343-12.453,18.578-24.522,17.84-12.501-.765-22.077-8.191-24.181-21.104-4.596-28.215,10.73-39.012,4.714-61.211-6.183-22.817-18.722-46.581-39.341-59.105-17.022-10.34-30.37,4.496-44.556,12.994-5.426,3.271-10.892,6.152-17.597,6.336L0,0h1630.436s-.006,139.986-.006,139.986c-14.182.533-26.836-4.566-38.166-12.296-8.433-5.823-16.252-11.724-25.048-16.822-28.056-16.26-55.595-9.883-81.464,6.767-17.631,11.348-20.166,35.338-16.543,54.547,1.875,9.943,3.779,19.422,5.012,29.601,1.493,12.329-2.768,24.916-13.428,31.745-9.782,6.266-23.718,4.346-31.504-4.118-5.881-6.393-7.983-15.094-7.682-23.814.753-21.858,6.507-38.959,7.186-63.293.503-18.043-11.314-32.826-29.332-35.9-17.619-3.005-35.964,1.172-50.865,10.931-24.117,15.795-30.123,38.846-33.928,66.229-2.978,21.433-1.409,42.126,4.253,62.899,5.935,21.775,12.017,43.886,2.152,65.416-7.876,17.191-26.708,24.868-44.873,21.83-13.574-2.27-23.379-10.773-27.198-24.2-3.657-12.858-4.212-26.371-1.794-39.847l8.341-46.47c5.265-29.33,9.831-54.626-6.658-80.056-8.619-13.292-21.951-20.644-37.771-21.788-16.192-1.171-31.205,1.52-45.752,8.983l-32.938,16.9c-8.726,4.477-17.634,8.025-27.208,10.058-38.211,8.114-64.73-41.208-98.647-29.501-16.779,5.791-38.799,19.728-44.767,36.667-10.981,31.169,6.217,49.489-1.218,80.112-2.994,12.334-12.732,18.547-24.924,17.608-12.479-.962-21.819-8.535-23.794-21.453-4.433-28.995,11.442-38.801,4.374-62.546-6.599-22.168-18.796-45.681-39.381-57.623Z"/>
-            </svg>
-        </div>
-        <!-- Black floating bubbles -->
-        <div class="highlight-bubbles"></div>
-        <div class="container">
-            <div class="highlight-grid">
-                <div class="highlight-image">
-                    <div class="product-showcase">
-                        <img src="assets/images/dabs_packaging.png" alt="Dabs 1 Gram Container" class="featured-product">
-                        <div class="product-badge">
-                            <span class="badge-text">2</span>
-                            <span class="badge-label">GRAMS</span>
-                        </div>
+                    <h1 class="age-gate-title">Welcome to Dabs</h1>
+
+                    <p class="age-gate-question">Are you 21 years of age or older?</p>
+
+                    <p class="age-gate-disclaimer">
+                        You must be 21 years of age or older to view this website.
+                        This website contains information about cannabis products that are intended for adults only.
+                    </p>
+
+                    <div class="age-gate-buttons">
+                        <button id="ageGateYes" class="age-btn age-btn-yes">
+                            Yes, I'm 21+
+                        </button>
+                        <button id="ageGateNo" class="age-btn age-btn-no">
+                            No, I'm Under 21
+                        </button>
                     </div>
+
+                    <p class="age-gate-legal">
+                        By entering this site, you accept our
+                        <a href="#terms" class="legal-link">Terms & Conditions</a> and
+                        <a href="#privacy" class="legal-link">Privacy Policy</a>.
+                    </p>
                 </div>
-                <div class="highlight-content">
-                    <h2 class="highlight-title">TAKE DABS EVERYDAY</h2>
-                    <p class="highlight-description">
-                        <b>Our fresh-frozen live rosin concentrates deliver smooth flavor and serious potency in every dab.<b>
+
+                <!-- Step 2: Email Capture (compact) -->
+                <div id="emailStep" class="age-gate-step">
+                    <img src="assets/images/dabs_logo.png" alt="Dabs" class="age-gate-logo age-gate-logo-sm">
+
+                    <h2 class="email-step-title">You're In!</h2>
+                    <p class="email-step-desc">Want exclusive drops & deals? Join the list.</p>
+
+                    <form id="emailCaptureForm" class="email-inline-form">
+                        <div class="email-inline-row">
+                            <input
+                                type="email"
+                                id="userEmail"
+                                name="email"
+                                class="email-input"
+                                placeholder="your@email.com"
+                            >
+                            <button type="submit" class="email-inline-submit">Subscribe</button>
+                        </div>
+                        <label class="email-inline-consent">
+                            <input type="checkbox" id="consentMarketing" name="consentMarketing" checked>
+                            <span>I agree to receive emails &amp; confirm I'm 21+</span>
+                        </label>
+                    </form>
+
+                    <button type="button" id="continueToSiteBtn" class="age-btn age-btn-yes enter-site-btn">
+                        Enter Site
+                    </button>
+
+                    <p class="email-privacy-notice">
+                        No spam ever. <a href="#privacy" class="privacy-link">Privacy Policy</a>
                     </p>
                 </div>
             </div>
-        </div>
-    </section>
 
-    <!-- Strain Carousel Section -->
-    <section id="strains" class="strain-carousel-section">
-        <div class="container">
-            <h2 class="section-title">OUR STRAINS</h2>
-            <p class="strain-subtitle">Swipe to explore our premium live rosin collection</p>
-            
-            <div class="carousel-container">
-                <button class="carousel-nav carousel-prev" aria-label="Previous">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
-                        <polyline points="15 18 9 12 15 6"></polyline>
-                    </svg>
-                </button>
-                
-                <div class="carousel-wrapper">
-                    <div id="strainCarousel" class="carousel-track">
-                        <!-- Strains will be loaded dynamically -->
-                    </div>
-                </div>
-                
-                <button class="carousel-nav carousel-next" aria-label="Next">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
-                        <polyline points="9 18 15 12 9 6"></polyline>
-                    </svg>
-                </button>
-            </div>
-            
-        </div>
-    </section>
-
-    <!-- Products Grid Section -->
-    <section id="products" class="products-section">
-        <!-- Dripping honey effect - yellow honey drips DOWN from highlight into dark section -->
-        <div class="drip-divider drip-yellow-to-dark">
-            <svg viewBox="0 0 1630 335" preserveAspectRatio="none">
-                <defs>
-                    <!-- Gradient for yellow drips - matching yellow section -->
-                    <linearGradient id="yellowDripGradient" x1="0%" y1="0%" x2="0%" y2="100%">
-                        <stop offset="0%" style="stop-color:#FFB700;stop-opacity:1" />
-                        <stop offset="40%" style="stop-color:#FFB700;stop-opacity:1" />
-                        <stop offset="80%" style="stop-color:#FFAA00;stop-opacity:0.98" />
-                        <stop offset="100%" style="stop-color:#FF9D00;stop-opacity:0.95" />
-                    </linearGradient>
-                </defs>
-                
-                <!-- Organic honey drip pattern -->
-                <path fill="url(#yellowDripGradient)" d="M876.867,120.549c-22.305-12.94-39.395,17.181-58.722,19.232-28.246,2.997-44.805-16.818-66.688-29.248-27.974-15.889-54.224-9.379-80.013,6.526-18.178,11.211-21.089,35.143-17.471,54.606,1.893,10.179,3.823,19.889,5.103,30.211,1.483,11.96-2.586,24.168-12.729,31.157s-25.001,4.934-32.905-4.417c-5.606-6.633-7.381-15.328-6.952-23.965,1.141-22.994,6.868-39.979,7.121-63.293.185-17.086-11.006-31.277-28.05-34.669-32.209-6.409-68.042,12.1-78.942,45.212-7.605,23.103-10.347,47.576-7.394,71.907,3.282,27.046,15.595,48.457,10.763,75.064-1.657,9.126-5.117,17.508-11.733,23.956-10.523,10.255-25.223,13.489-39.425,10.432-28.747-6.187-30.126-39.75-26.796-63.379,4.163-29.538,11.963-56.321,13.115-85.258.632-15.884-3.554-30.26-12.484-43.04-8.558-12.247-21.256-19.084-36.294-20.162-14.62-1.049-28.697.292-41.862,6.963l-29.086,14.738c-20.458,10.367-41.416,21.458-64.252,10.565-24.449-11.663-46.093-34.135-70.13-25.793-16.727,5.805-38.603,19.815-44.49,36.853-10.659,30.849,6.111,49.158-1.064,79.608-2.908,12.343-12.453,18.578-24.522,17.84-12.501-.765-22.077-8.191-24.181-21.104-4.596-28.215,10.73-39.012,4.714-61.211-6.183-22.817-18.722-46.581-39.341-59.105-17.022-10.34-30.37,4.496-44.556,12.994-5.426,3.271-10.892,6.152-17.597,6.336L0,0h1630.436s-.006,139.986-.006,139.986c-14.182.533-26.836-4.566-38.166-12.296-8.433-5.823-16.252-11.724-25.048-16.822-28.056-16.26-55.595-9.883-81.464,6.767-17.631,11.348-20.166,35.338-16.543,54.547,1.875,9.943,3.779,19.422,5.012,29.601,1.493,12.329-2.768,24.916-13.428,31.745-9.782,6.266-23.718,4.346-31.504-4.118-5.881-6.393-7.983-15.094-7.682-23.814.753-21.858,6.507-38.959,7.186-63.293.503-18.043-11.314-32.826-29.332-35.9-17.619-3.005-35.964,1.172-50.865,10.931-24.117,15.795-30.123,38.846-33.928,66.229-2.978,21.433-1.409,42.126,4.253,62.899,5.935,21.775,12.017,43.886,2.152,65.416-7.876,17.191-26.708,24.868-44.873,21.83-13.574-2.27-23.379-10.773-27.198-24.2-3.657-12.858-4.212-26.371-1.794-39.847l8.341-46.47c5.265-29.33,9.831-54.626-6.658-80.056-8.619-13.292-21.951-20.644-37.771-21.788-16.192-1.171-31.205,1.52-45.752,8.983l-32.938,16.9c-8.726,4.477-17.634,8.025-27.208,10.058-38.211,8.114-64.73-41.208-98.647-29.501-16.779,5.791-38.799,19.728-44.767,36.667-10.981,31.169,6.217,49.489-1.218,80.112-2.994,12.334-12.732,18.547-24.924,17.608-12.479-.962-21.819-8.535-23.794-21.453-4.433-28.995,11.442-38.801,4.374-62.546-6.599-22.168-18.796-45.681-39.381-57.623Z"/>
-            </svg>
-        </div>
-        <div class="container">
-            <h2 class="section-title">OUR PRODUCTS</h2>
-            <div class="products-grid">
-                <!-- Product Card 1: Live Rosin -->
-                <div class="product-card" data-product="live-rosin">
-                    <div class="card-inner">
-                        <div class="card-image">
-                            <img src="assets/images/live_rosin.png" alt="Live Rosin" loading="lazy">
-                        </div>
-                        <h3 class="card-title">Live Rosin</h3>
-                    </div>
-                </div>
-
-                <!-- Product Card 2: All-In-Ones -->
-                <div class="product-card" data-product="all-in-ones">
-                    <div class="card-inner">
-                        <div class="card-image">
-                            <img src="assets/images/aio.png" alt="All-In-Ones" loading="lazy">
-                        </div>
-                        <h3 class="card-title">All-In-Ones</h3>
-                    </div>
-                </div>
-
-                <!-- Product Card 3: Live Rosin Baller Jars -->
-                <div class="product-card" data-product="baller-jars">
-                    <div class="card-inner">
-                        <div class="card-image">
-                            <img src="assets/images/live_rosin2.png" alt="Live Rosin Baller Jars 14G" loading="lazy">
-                        </div>
-                        <h3 class="card-title">Live Rosin Baller Jars 14G</h3>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Store Locator Section -->
-    <section id="stores" class="store-locator">
-        <div class="container">
-            <h2 class="section-title">FIND NEARBY SHOPS</h2>
-            
-            <!-- Search Controls -->
-            <div class="store-controls">
-                <div class="control-group">
-                    <label for="stateFilter">Filter by State:</label>
-                    <select id="stateFilter" class="state-select">
-                        <option value="">All States</option>
-                        <option value="NM">New Mexico</option>
-                        <option value="CA">California</option>
-                        <option value="MN">Minnesota</option>
-                    </select>
-                </div>
-                
-                <div class="control-group">
-                    <label for="zipSearch">Search by ZIP:</label>
-                    <input type="text" id="zipSearch" class="zip-input" placeholder="Enter ZIP code" maxlength="5">
-                    <button id="zipSearchBtn" class="search-btn">Search</button>
-                </div>
-            </div>
-
-            <!-- Map Container -->
-            <div id="storeMap" class="map-container">
-                <div class="map-loading">
-                    <div class="loading-spinner"></div>
-                    <p>Loading store locations...</p>
-                </div>
-            </div>
-
-            <!-- Store List -->
-            <div id="storeList" class="store-list">
-                <div class="list-header">
-                    <h3>Store Locations</h3>
-                    <span id="storeCount" class="store-count">0 stores</span>
-                </div>
-                <div id="storeCards" class="store-cards"></div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-brand">
-                    <img src="assets/images/dabs_logo.png" alt="Dabs" class="footer-logo">
-                </div>
-                <nav class="footer-nav">
-                    <ul>
-                        <li><a href="#home">Home</a></li>
-                        <li><a href="#strains">Strains</a></li>
-                        <li><a href="#products">Products</a></li>
-                        <li><a href="#stores">Find Stores</a></li>
-                        <li><a href="#contact">Contact</a></li>
-                    </ul>
-                </nav>
-            </div>
-            <div class="footer-disclaimer">
-                <p>For use only by adults 21+. Keep out of reach of children.</p>
-            </div>
-            <div class="footer-bottom">
-                <p>&copy; 2026 Dabs. All rights reserved.</p>
-            </div>
-        </div>
-    </footer>
-
-    <!-- Load Leaflet for maps (open source, free alternative to Google Maps) -->
-    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
-    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
-    
-    <script src="js/main.js"></script>
-    <script src="js/store-locator.js"></script>
-    <script src="js/strain-carousel.js"></script>
-    <script src="js/request-dabs.js"></script>
-
-    <!-- Request Dabs Modal -->
-    <div id="requestDabsModal" class="request-modal-overlay">
-        <div class="request-modal-container">
-            <button class="request-modal-close" aria-label="Close">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
-                    <line x1="18" y1="6" x2="6" y2="18"></line>
-                    <line x1="6" y1="6" x2="18" y2="18"></line>
+            <!-- Honey Drip Bottom -->
+            <div class="age-gate-drip-bottom">
+                <svg viewBox="0 0 1630 200" preserveAspectRatio="none">
+                    <defs>
+                        <linearGradient id="honeyDripBottom" x1="0%" y1="100%" x2="0%" y2="0%">
+                            <stop offset="0%" style="stop-color:#FFB700;stop-opacity:1" />
+                            <stop offset="50%" style="stop-color:#FFAA00;stop-opacity:1" />
+                            <stop offset="100%" style="stop-color:#FF9D00;stop-opacity:0.95" />
+                        </linearGradient>
+                    </defs>
+                    <path fill="url(#honeyDripBottom)" d="M876.867,80.549c-22.305-12.94-39.395,17.181-58.722,19.232-28.246,2.997-44.805-16.818-66.688-29.248-27.974-15.889-54.224-9.379-80.013,6.526-18.178,11.211-21.089,35.143-17.471,54.606,1.893,10.179,3.823,19.889,5.103,30.211,1.483,11.96-2.586,24.168-12.729,31.157s-25.001,4.934-32.905-4.417c-5.606-6.633-7.381-15.328-6.952-23.965,1.141-22.994,6.868-39.979,7.121-63.293.185-17.086-11.006-31.277-28.05-34.669-32.209-6.409-68.042,12.1-78.942,45.212-7.605,23.103-10.347,47.576-7.394,71.907L0,0h1630.436s-.006,99.986-.006,99.986c-14.182.533-26.836-4.566-38.166-12.296-8.433-5.823-16.252-11.724-25.048-16.822-28.056-16.26-55.595-9.883-81.464,6.767-17.631,11.348-20.166,35.338-16.543,54.547Z"/>
                 </svg>
-            </button>
-            
-            <div class="request-modal-content">
-                <h2 class="request-modal-title">Request Dabs Near You</h2>
-                <p class="request-modal-description">
-                    Let us know where you'd like to find Dabs! We'll reach out to stores in your area.
+            </div>
+        </div>
+    </div>
+
+    <!-- Under Age Modal -->
+    <div id="underAgeModal" class="under-age-overlay">
+        <div class="under-age-container">
+            <div class="under-age-content">
+                <h2 class="under-age-title">Sorry!</h2>
+                <p class="under-age-message">
+                    You must be 21 years of age or older to access this website.
                 </p>
-                
-                <form id="requestDabsForm" class="request-form">
-                    <!-- City Selection -->
-                    <div class="form-group">
-                        <label for="requestCity">City *</label>
-                        <input 
-                            type="text" 
-                            id="requestCity" 
-                            name="city" 
-                            class="form-input" 
-                            placeholder="Enter your city"
-                            required
-                        >
-                    </div>
-                    
-                    <!-- Store Name -->
-                    <div class="form-group">
-                        <label for="requestStore">Retail Store Name *</label>
-                        <input 
-                            type="text" 
-                            id="requestStore" 
-                            name="store" 
-                            class="form-input" 
-                            placeholder="e.g., Green Haven Dispensary"
-                            required
-                        >
-                    </div>
-                    
-                    <!-- Product Selection -->
-                    <div class="form-group">
-                        <label for="requestProduct">Product You Want *</label>
-                        <select id="requestProduct" name="product" class="form-input" required>
-                            <option value="">Select a product...</option>
-                            <option value="Live Rosin 1g">Live Rosin 1g</option>
-                            <option value="Live Rosin 2g">Live Rosin 2g</option>
-                            <option value="All-In-One Vape">All-In-One Vape</option>
-                            <option value="Baller Jar 14g">Baller Jar 14g</option>
-                            <option value="Any Dabs Product">Any Dabs Product</option>
-                        </select>
-                    </div>
-                    
-                    <!-- Strain Preference (Optional) -->
-                    <div class="form-group">
-                        <label for="requestStrain">Preferred Strain (Optional)</label>
-                        <input 
-                            type="text" 
-                            id="requestStrain" 
-                            name="strain" 
-                            class="form-input" 
-                            placeholder="e.g., Blue Dream, Gelato"
-                        >
-                    </div>
-                    
-                    <!-- Contact Info -->
-                    <div class="form-group">
-                        <label for="requestEmail">Email (Optional)</label>
-                        <input 
-                            type="email" 
-                            id="requestEmail" 
-                            name="email" 
-                            class="form-input" 
-                            placeholder="your@email.com"
-                        >
-                    </div>
-                    
-                    <div class="form-group">
-                        <label for="requestIG">Instagram Handle (Optional)</label>
-                        <input 
-                            type="text" 
-                            id="requestIG" 
-                            name="instagram" 
-                            class="form-input" 
-                            placeholder="@yourhandle"
-                        >
-                    </div>
-                    
-                    <!-- Submit Button -->
-                    <button type="submit" class="request-submit-btn">
-                        Send Request
-                    </button>
-                </form>
+                <p class="under-age-submessage">
+                    Thank you for your honesty. Please come back when you're 21+.
+                </p>
+                <a href="https://www.google.com" class="under-age-btn">
+                    Leave Site
+                </a>
             </div>
         </div>
     </div>
 
-    <!-- Product Detail Modal -->
-    <div id="productModal" class="product-modal">
-        <div class="modal-overlay"></div>
-        <div class="modal-content">
-            <button class="modal-close" aria-label="Close modal">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
-                    <line x1="18" y1="6" x2="6" y2="18"></line>
-                    <line x1="6" y1="6" x2="18" y2="18"></line>
-                </svg>
-            </button>
-            
-            <div class="modal-body">
-                <div class="modal-header">
-                    <h2 id="modalTitle" class="modal-title"></h2>
-                    <span id="modalBadge" class="modal-badge"></span>
-                </div>
-                
-                <div class="modal-images">
-                    <div id="modalImageGallery" class="image-gallery"></div>
-                </div>
-                
-                <div class="modal-description">
-                    <p id="modalDescription"></p>
-                </div>
-                
-                <div class="modal-features">
-                    <h3>Features</h3>
-                    <ul id="modalFeatures"></ul>
-                </div>
+    <!-- Cookie Consent Banner -->
+    <div id="cookieBanner" class="cookie-banner">
+        <div class="cookie-banner-inner">
+            <div class="cookie-banner-text">
+                <p>
+                    We use cookies to verify your age, remember your preferences, and improve your experience.
+                    You can choose which cookies to allow.
+                    <a href="#privacy">Cookie Policy</a>
+                </p>
+            </div>
+            <div class="cookie-banner-actions">
+                <button id="cookieAcceptAll" class="cookie-btn cookie-btn-accept">Accept All</button>
+                <button id="cookieRejectAll" class="cookie-btn cookie-btn-reject">Necessary Only</button>
+                <button id="cookieManage" class="cookie-btn cookie-btn-manage">Manage</button>
             </div>
         </div>
     </div>
+
+    <!-- Cookie Preferences Modal -->
+    <div id="cookieModal" class="cookie-modal-overlay">
+        <div class="cookie-modal">
+            <h3>Cookie Preferences</h3>
+            <p class="cookie-modal-desc">
+                Choose which cookies you'd like to allow. Necessary cookies are required
+                for the site to function and cannot be disabled.
+            </p>
+
+            <div class="cookie-category">
+                <div class="cookie-category-info">
+                    <div class="cookie-category-name">Necessary</div>
+                    <div class="cookie-category-desc">Age verification and cookie consent. Required for the site to work.</div>
+                </div>
+                <label class="cookie-toggle">
+                    <input type="checkbox" checked disabled>
+                    <span class="cookie-toggle-slider"></span>
+                </label>
+            </div>
+
+            <div class="cookie-category">
+                <div class="cookie-category-info">
+                    <div class="cookie-category-name">Functional</div>
+                    <div class="cookie-category-desc">Remembers your email signup preference so you aren't asked again.</div>
+                </div>
+                <label class="cookie-toggle">
+                    <input type="checkbox" id="toggleFunctional" checked>
+                    <span class="cookie-toggle-slider"></span>
+                </label>
+            </div>
+
+            <div class="cookie-category">
+                <div class="cookie-category-info">
+                    <div class="cookie-category-name">Analytics</div>
+                    <div class="cookie-category-desc">Helps us understand how visitors use the site to improve it.</div>
+                </div>
+                <label class="cookie-toggle">
+                    <input type="checkbox" id="toggleAnalytics">
+                    <span class="cookie-toggle-slider"></span>
+                </label>
+            </div>
+
+            <div class="cookie-modal-actions">
+                <button id="cookieModalSave" class="cookie-btn cookie-btn-reject">Save Preferences</button>
+                <button id="cookieModalAcceptAll" class="cookie-btn cookie-btn-accept">Accept All</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/cookie-consent.js"></script>
+    <script src="js/age-gate.js"></script>
 </body>
 </html>

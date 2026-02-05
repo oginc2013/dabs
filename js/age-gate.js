@@ -9,18 +9,17 @@
 
 const AGE_GATE_CONFIG = {
     // How long before showing age gate again (in days)
-    COOKIE_EXPIRY_DAYS: 30,  // 30 days = 1 month
+    COOKIE_EXPIRY_DAYS: 1,  // 30 days = 1 month
     
-    // Google Sheets Configuration for Email Capture
-    USE_GOOGLE_SHEETS: false,  // Set to true once configured
-    SHEET_ID: 'YOUR_EMAIL_SHEET_ID',
-    API_KEY: 'YOUR_GOOGLE_API_KEY',
-    SHEET_NAME: 'EmailSubscribers',
-    
-    // Alternative: Webhook URL (recommended for production)
+    // Email capture backend — pick ONE method and configure in Vercel env vars
+    // Method 1: Webhook (recommended) — set USE_WEBHOOK to true & add URL
     USE_WEBHOOK: false,
-    WEBHOOK_URL: 'YOUR_WEBHOOK_URL',  // e.g., Zapier, Make, n8n
-    
+    WEBHOOK_URL: '',  // Set in Vercel env vars or replace here (e.g., Zapier, Make, n8n)
+
+    // Method 2: Google Sheets via Apps Script
+    USE_GOOGLE_SHEETS: false,
+    SHEET_NAME: 'EmailSubscribers',
+
     // Main site URL (change this to your actual main page)
     MAIN_SITE_URL: 'main.html',  // or 'index.html' depending on your setup
     

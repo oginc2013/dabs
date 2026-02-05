@@ -10,7 +10,28 @@
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800;900&display=swap" rel="stylesheet">
 </head>
 <body>
-    <div class="dashboard-container">
+    <!-- Password Gate -->
+    <div id="dashboardAuth" class="auth-overlay">
+        <div class="auth-container">
+            <img src="assets/images/dabs_logo.png" alt="Dabs" class="auth-logo">
+            <h2 class="auth-title">Dashboard Access</h2>
+            <p class="auth-desc">Enter the password to continue.</p>
+            <form id="authForm" class="auth-form">
+                <input
+                    type="password"
+                    id="authPassword"
+                    class="auth-input"
+                    placeholder="Password"
+                    autocomplete="off"
+                    autofocus
+                >
+                <button type="submit" class="auth-btn">Enter</button>
+            </form>
+            <p id="authError" class="auth-error"></p>
+        </div>
+    </div>
+
+    <div class="dashboard-container" style="display: none;">
         <!-- Header -->
         <header class="dashboard-header">
             <div class="header-content">
@@ -106,9 +127,8 @@
                             <th>City</th>
                             <th>Store</th>
                             <th>Product</th>
-                            <th>Strain</th>
                             <th>Contact</th>
-                            <th>Actions</th>
+                            <th>Status</th>
                         </tr>
                     </thead>
                     <tbody id="requestsTableBody">
@@ -160,6 +180,42 @@
         </section>
     </div>
 
+    <script>
+    // Dashboard password gate — hash is checked client-side
+    // Password hash (SHA-256) — the actual password is NOT in this file
+    const DASH_HASH = 'cdf50214ae2b67ba2651df3ecbaa88022564b04b8a503d9717e978b8cca395dd';
+
+    async function hashPassword(pw) {
+        const encoded = new TextEncoder().encode(pw);
+        const buffer = await crypto.subtle.digest('SHA-256', encoded);
+        return Array.from(new Uint8Array(buffer)).map(b => b.toString(16).padStart(2, '0')).join('');
+    }
+
+    function unlockDashboard() {
+        document.getElementById('dashboardAuth').style.display = 'none';
+        document.querySelector('.dashboard-container').style.display = '';
+        sessionStorage.setItem('dabs_dash_auth', 'true');
+    }
+
+    // Check if already authenticated this session
+    if (sessionStorage.getItem('dabs_dash_auth') === 'true') {
+        unlockDashboard();
+    }
+
+    document.getElementById('authForm').addEventListener('submit', async (e) => {
+        e.preventDefault();
+        const pw = document.getElementById('authPassword').value;
+        const hash = await hashPassword(pw);
+
+        if (hash === DASH_HASH) {
+            unlockDashboard();
+        } else {
+            const err = document.getElementById('authError');
+            err.textContent = 'Incorrect password';
+            document.getElementById('authPassword').value = '';
+        }
+    });
+    </script>
     <script src="js/dashboard.js"></script>
 </body>
 </html>
