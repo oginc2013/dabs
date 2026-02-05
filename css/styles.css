@@ -171,7 +171,7 @@ img {
 .hero-background {
     position: absolute;
     inset: 0;
-    overflow: hidden;
+    overflow: visible;
 }
 
 /* Animated floating particles */
@@ -222,6 +222,8 @@ img {
     z-index: 2;
     position: relative;
     animation: fadeInUp 1s ease-out;
+    padding-top: 3rem;
+    padding-bottom: 3rem;
 }
 
 @keyframes fadeInUp {
@@ -238,6 +240,7 @@ img {
 .hero-logo {
     max-width: 400px;
     margin: 0 auto var(--spacing-md);
+    padding: 2rem 0;
     filter: drop-shadow(0 10px 30px rgba(255, 183, 0, 0.3));
     animation: glow 3s infinite alternate;
 }
@@ -275,6 +278,299 @@ img {
     font-size: clamp(2rem, 6vw, 4rem);
     color: var(--color-white);
     line-height: 0.9;
+}
+
+/* Hero Buttons Container */
+.hero-buttons {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+/* ===================================
+   Strain Carousel Section
+   =================================== */
+.strain-carousel-section {
+    background: var(--color-primary);
+    padding: var(--spacing-xl) 0;
+    padding-bottom: 0;
+    position: relative;
+    overflow: visible;
+}
+
+.strain-subtitle {
+    text-align: center;
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 1.1rem;
+    margin-bottom: var(--spacing-lg);
+}
+
+.carousel-container {
+    position: relative;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 60px;
+}
+
+.carousel-wrapper {
+    overflow: hidden;
+    width: 100%;
+}
+
+.carousel-track {
+    display: flex;
+    gap: 2rem;
+    transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    padding: 2rem 0;
+}
+
+.strain-card {
+    flex: 0 0 300px;
+    background: linear-gradient(135deg, rgba(255, 183, 0, 0.1) 0%, rgba(255, 183, 0, 0.05) 100%);
+    border: 2px solid rgba(255, 183, 0, 0.3);
+    border-radius: 20px;
+    padding: 2rem;
+    text-align: center;
+    transition: var(--transition-smooth);
+    cursor: pointer;
+}
+
+.strain-card:hover {
+    transform: translateY(-10px);
+    border-color: var(--color-secondary);
+    box-shadow: 0 15px 40px rgba(255, 183, 0, 0.4);
+}
+
+.strain-card-image {
+    width: 100%;
+    height: 250px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1.5rem;
+    background: rgba(0, 0, 0, 0.3);
+    border-radius: 15px;
+    overflow: hidden;
+}
+
+.strain-card-image img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+}
+
+.strain-name {
+    font-size: 1.5rem;
+    font-weight: 800;
+    color: var(--color-secondary);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 0.5rem;
+}
+
+.strain-type {
+    font-size: 0.9rem;
+    color: rgba(255, 255, 255, 0.6);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* Carousel Navigation */
+.carousel-nav {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 50px;
+    height: 50px;
+    background: var(--color-secondary);
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: var(--transition-smooth);
+    z-index: 10;
+}
+
+.carousel-nav svg {
+    width: 24px;
+    height: 24px;
+    color: var(--color-primary);
+}
+
+.carousel-nav:hover {
+    background: var(--color-accent);
+    transform: translateY(-50%) scale(1.1);
+    box-shadow: 0 5px 20px rgba(255, 183, 0, 0.5);
+}
+
+.carousel-prev {
+    left: 0;
+}
+
+.carousel-next {
+    right: 0;
+}
+
+/* ===================================
+   Request Dabs Modal
+   =================================== */
+.request-modal-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.95);
+    backdrop-filter: blur(10px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 10000;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+}
+
+.request-modal-overlay.active {
+    opacity: 1;
+    pointer-events: all;
+}
+
+.request-modal-container {
+    background: linear-gradient(135deg, #1a1a1a 0%, #0a0a0a 100%);
+    border: 3px solid var(--color-secondary);
+    border-radius: 20px;
+    max-width: 550px;
+    width: 90%;
+    max-height: 85vh;
+    overflow-y: auto;
+    position: relative;
+    animation: modalSlideIn 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    box-shadow: 0 20px 60px rgba(255, 183, 0, 0.4);
+}
+
+.request-modal-close {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    width: 45px;
+    height: 45px;
+    background: var(--color-secondary);
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 10;
+    transition: var(--transition-smooth);
+}
+
+.request-modal-close svg {
+    width: 20px;
+    height: 20px;
+    color: var(--color-primary);
+}
+
+.request-modal-close:hover {
+    transform: rotate(90deg) scale(1.1);
+    background: var(--color-accent);
+}
+
+.request-modal-content {
+    padding: 3rem 2.5rem;
+}
+
+.request-modal-title {
+    font-size: 2rem;
+    font-weight: 900;
+    color: var(--color-secondary);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 1rem;
+    text-align: center;
+}
+
+.request-modal-description {
+    font-size: 1rem;
+    color: rgba(255, 255, 255, 0.8);
+    line-height: 1.6;
+    margin-bottom: 2rem;
+    text-align: center;
+}
+
+.request-form .form-group {
+    margin-bottom: 1.5rem;
+}
+
+.request-form label {
+    display: block;
+    font-size: 0.9rem;
+    font-weight: 700;
+    color: var(--color-secondary);
+    margin-bottom: 0.5rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.request-form .form-input {
+    width: 100%;
+    padding: 1rem;
+    background: rgba(255, 183, 0, 0.05);
+    border: 2px solid rgba(255, 183, 0, 0.3);
+    border-radius: 10px;
+    color: var(--color-white);
+    font-family: var(--font-main);
+    font-size: 1rem;
+    transition: var(--transition-smooth);
+}
+
+.request-form .form-input:focus {
+    outline: none;
+    background: rgba(255, 183, 0, 0.1);
+    border-color: var(--color-secondary);
+    box-shadow: 0 0 0 4px rgba(255, 183, 0, 0.1);
+}
+
+.request-form .form-input::placeholder {
+    color: rgba(255, 255, 255, 0.4);
+}
+
+.request-form select.form-input {
+    cursor: pointer;
+}
+
+.request-form select.form-input option {
+    background: var(--color-primary);
+    color: var(--color-white);
+}
+
+.request-submit-btn {
+    width: 100%;
+    padding: 1.2rem;
+    background: var(--color-secondary);
+    color: var(--color-primary);
+    border: none;
+    border-radius: 50px;
+    font-family: var(--font-main);
+    font-size: 1.1rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    cursor: pointer;
+    transition: var(--transition-smooth);
+    margin-top: 1rem;
+}
+
+.request-submit-btn:hover {
+    background: var(--color-accent);
+    transform: translateY(-2px);
+    box-shadow: 0 10px 30px rgba(255, 183, 0, 0.4);
+}
+
+.request-submit-btn:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
 }
 
 /* CTA Button */
@@ -914,6 +1210,12 @@ img {
     .hero {
         padding-bottom: 0;
         min-height: 90vh;
+        padding-top: 100px;
+    }
+    
+    .hero-content {
+        padding-top: 2rem;
+        padding-bottom: 2rem;
     }
     
     .product-highlight {

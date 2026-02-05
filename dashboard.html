@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dabs - Product Requests Dashboard</title>
+    <link rel="stylesheet" href="css/dashboard.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="dashboard-container">
+        <!-- Header -->
+        <header class="dashboard-header">
+            <div class="header-content">
+                <img src="assets/images/dabs_logo.png" alt="Dabs" class="dashboard-logo">
+                <h1>Product Requests Dashboard</h1>
+            </div>
+            <div class="header-actions">
+                <button id="refreshData" class="btn btn-secondary">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <polyline points="23 4 23 10 17 10"></polyline>
+                        <polyline points="1 20 1 14 7 14"></polyline>
+                        <path d="M3.51 9a9 9 0 0 1 14.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0 0 20.49 15"></path>
+                    </svg>
+                    Refresh
+                </button>
+                <a href="index.html" class="btn btn-primary">Back to Site</a>
+            </div>
+        </header>
+
+        <!-- Stats Overview -->
+        <section class="stats-section">
+            <div class="stat-card">
+                <div class="stat-icon">📊</div>
+                <div class="stat-content">
+                    <h3 id="totalRequests">0</h3>
+                    <p>Total Requests</p>
+                </div>
+            </div>
+
+            <div class="stat-card">
+                <div class="stat-icon">📅</div>
+                <div class="stat-content">
+                    <h3 id="thisMonthRequests">0</h3>
+                    <p>This Month</p>
+                </div>
+            </div>
+
+            <div class="stat-card">
+                <div class="stat-icon">🏪</div>
+                <div class="stat-content">
+                    <h3 id="uniqueStores">0</h3>
+                    <p>Unique Stores</p>
+                </div>
+            </div>
+
+            <div class="stat-card">
+                <div class="stat-icon">🌆</div>
+                <div class="stat-content">
+                    <h3 id="uniqueCities">0</h3>
+                    <p>Cities</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Charts Section -->
+        <section class="charts-section">
+            <div class="chart-container">
+                <h2>Requests by Store</h2>
+                <div id="storeChart" class="chart-content"></div>
+            </div>
+
+            <div class="chart-container">
+                <h2>Requests by City</h2>
+                <div id="cityChart" class="chart-content"></div>
+            </div>
+
+            <div class="chart-container">
+                <h2>Most Requested Products</h2>
+                <div id="productChart" class="chart-content"></div>
+            </div>
+        </section>
+
+        <!-- Requests Table -->
+        <section class="table-section">
+            <div class="table-header">
+                <h2>All Requests</h2>
+                <div class="table-filters">
+                    <input type="text" id="searchRequests" placeholder="Search..." class="search-input">
+                    <select id="filterCity" class="filter-select">
+                        <option value="">All Cities</option>
+                    </select>
+                    <select id="filterProduct" class="filter-select">
+                        <option value="">All Products</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="table-wrapper">
+                <table id="requestsTable" class="requests-table">
+                    <thead>
+                        <tr>
+                            <th>Date</th>
+                            <th>City</th>
+                            <th>Store</th>
+                            <th>Product</th>
+                            <th>Strain</th>
+                            <th>Contact</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody id="requestsTableBody">
+                        <!-- Rows will be populated by JavaScript -->
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <!-- Email Preview Section -->
+        <section class="email-preview-section">
+            <h2>Store Email Preview</h2>
+            <p class="email-description">This is what store owners will receive:</p>
+            
+            <div class="email-preview">
+                <div class="email-header">
+                    <strong>Subject:</strong> Customer Interest in Dabs Cannabis Products
+                </div>
+                <div class="email-body">
+                    <p>Hello [Store Name],</p>
+                    
+                    <p>We wanted to let you know that <strong class="highlight-count">[X]</strong> customers in your area have requested Dabs products this month.</p>
+                    
+                    <p><strong>Most Requested Products:</strong></p>
+                    <ul id="emailProductList">
+                        <li>Live Rosin - 5 requests</li>
+                        <li>All-In-One Vapes - 3 requests</li>
+                    </ul>
+                    
+                    <p>Customers are looking for premium cannabis products, and Dabs delivers the quality they want.</p>
+                    
+                    <p><strong>Why stock Dabs?</strong></p>
+                    <ul>
+                        <li>Premium fresh-frozen live rosin</li>
+                        <li>Proven customer demand in your area</li>
+                        <li>Competitive wholesale pricing</li>
+                        <li>Marketing support included</li>
+                    </ul>
+                    
+                    <p>Interested in learning more? Contact us:</p>
+                    <p>
+                        Email: wholesale@dabscannabis.com<br>
+                        Phone: (555) 123-4567
+                    </p>
+                    
+                    <p>Best regards,<br>The Dabs Team</p>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <script src="js/dashboard.js"></script>
+</body>
+</html>

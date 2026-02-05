@@ -9,7 +9,8 @@
 
 const STORE_CONFIG = {
     // REPLACE THIS with your actual Google Sheets configuration
-    SHEET_ID: '1iCiOs3wdkfEwe_v1gBZz6mSrKQJHq3x46tGG6z7b858', // Get this from your Google Sheet URL
+    // Sheet ID is stored securely in Vercel environment variables
+    // Data is fetched through /api/stores endpoint
     SHEET_NAME: 'Stores',              // Name of the sheet tab
     
     // How often to refresh data (in milliseconds) - 5 minutes
@@ -123,7 +124,7 @@ async function loadStoresFromSheet() {
 
 async function fetchGoogleSheetData() {
   const response = await fetch(
-    'https://dabs-two.vercel.app/api/stores'
+    '/api/stores'
   );
 
   if (!response.ok) {

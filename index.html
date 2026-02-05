@@ -18,6 +18,7 @@
                 <img src="assets/images/dabs_logo.png" alt="Dabs Logo" class="nav-logo">
                 <ul class="nav-links">
                     <li><a href="#home">Home</a></li>
+                    <li><a href="#strains">Strains</a></li>
                     <li><a href="#products">Products</a></li>
                     <li><a href="#stores">Find Stores</a></li>
                     <li><a href="#contact">Contact</a></li>
@@ -44,7 +45,10 @@
                     <span class="title-line-1">HIGH-POTENCY</span>
                     <span class="title-line-2">CANNABIS EXTRACT</span>
                 </h1>
-                <button class="cta-button">Get Dabs</button>
+                <div class="hero-buttons">
+                    <button class="cta-button">Get Dabs</button>
+                    <button class="cta-button secondary" id="requestDabsBtn">Request Dabs Near You</button>
+                </div>
             </div>
         </div>
     </section>
@@ -88,6 +92,35 @@
                     </p>
                 </div>
             </div>
+        </div>
+    </section>
+
+    <!-- Strain Carousel Section -->
+    <section id="strains" class="strain-carousel-section">
+        <div class="container">
+            <h2 class="section-title">OUR STRAINS</h2>
+            <p class="strain-subtitle">Swipe to explore our premium live rosin collection</p>
+            
+            <div class="carousel-container">
+                <button class="carousel-nav carousel-prev" aria-label="Previous">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                        <polyline points="15 18 9 12 15 6"></polyline>
+                    </svg>
+                </button>
+                
+                <div class="carousel-wrapper">
+                    <div id="strainCarousel" class="carousel-track">
+                        <!-- Strains will be loaded dynamically -->
+                    </div>
+                </div>
+                
+                <button class="carousel-nav carousel-next" aria-label="Next">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                        <polyline points="9 18 15 12 9 6"></polyline>
+                    </svg>
+                </button>
+            </div>
+            
         </div>
     </section>
 
@@ -199,6 +232,7 @@
                 <nav class="footer-nav">
                     <ul>
                         <li><a href="#home">Home</a></li>
+                        <li><a href="#strains">Strains</a></li>
                         <li><a href="#products">Products</a></li>
                         <li><a href="#stores">Find Stores</a></li>
                         <li><a href="#contact">Contact</a></li>
@@ -220,6 +254,108 @@
     
     <script src="js/main.js"></script>
     <script src="js/store-locator.js"></script>
+    <script src="js/strain-carousel.js"></script>
+    <script src="js/request-dabs.js"></script>
+
+    <!-- Request Dabs Modal -->
+    <div id="requestDabsModal" class="request-modal-overlay">
+        <div class="request-modal-container">
+            <button class="request-modal-close" aria-label="Close">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                    <line x1="18" y1="6" x2="6" y2="18"></line>
+                    <line x1="6" y1="6" x2="18" y2="18"></line>
+                </svg>
+            </button>
+            
+            <div class="request-modal-content">
+                <h2 class="request-modal-title">Request Dabs Near You</h2>
+                <p class="request-modal-description">
+                    Let us know where you'd like to find Dabs! We'll reach out to stores in your area.
+                </p>
+                
+                <form id="requestDabsForm" class="request-form">
+                    <!-- City Selection -->
+                    <div class="form-group">
+                        <label for="requestCity">City *</label>
+                        <input 
+                            type="text" 
+                            id="requestCity" 
+                            name="city" 
+                            class="form-input" 
+                            placeholder="Enter your city"
+                            required
+                        >
+                    </div>
+                    
+                    <!-- Store Name -->
+                    <div class="form-group">
+                        <label for="requestStore">Retail Store Name *</label>
+                        <input 
+                            type="text" 
+                            id="requestStore" 
+                            name="store" 
+                            class="form-input" 
+                            placeholder="e.g., Green Haven Dispensary"
+                            required
+                        >
+                    </div>
+                    
+                    <!-- Product Selection -->
+                    <div class="form-group">
+                        <label for="requestProduct">Product You Want *</label>
+                        <select id="requestProduct" name="product" class="form-input" required>
+                            <option value="">Select a product...</option>
+                            <option value="Live Rosin 1g">Live Rosin 1g</option>
+                            <option value="Live Rosin 2g">Live Rosin 2g</option>
+                            <option value="All-In-One Vape">All-In-One Vape</option>
+                            <option value="Baller Jar 14g">Baller Jar 14g</option>
+                            <option value="Any Dabs Product">Any Dabs Product</option>
+                        </select>
+                    </div>
+                    
+                    <!-- Strain Preference (Optional) -->
+                    <div class="form-group">
+                        <label for="requestStrain">Preferred Strain (Optional)</label>
+                        <input 
+                            type="text" 
+                            id="requestStrain" 
+                            name="strain" 
+                            class="form-input" 
+                            placeholder="e.g., Blue Dream, Gelato"
+                        >
+                    </div>
+                    
+                    <!-- Contact Info -->
+                    <div class="form-group">
+                        <label for="requestEmail">Email (Optional)</label>
+                        <input 
+                            type="email" 
+                            id="requestEmail" 
+                            name="email" 
+                            class="form-input" 
+                            placeholder="your@email.com"
+                        >
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="requestIG">Instagram Handle (Optional)</label>
+                        <input 
+                            type="text" 
+                            id="requestIG" 
+                            name="instagram" 
+                            class="form-input" 
+                            placeholder="@yourhandle"
+                        >
+                    </div>
+                    
+                    <!-- Submit Button -->
+                    <button type="submit" class="request-submit-btn">
+                        Send Request
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
 
     <!-- Product Detail Modal -->
     <div id="productModal" class="product-modal">
